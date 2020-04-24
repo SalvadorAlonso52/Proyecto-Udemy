@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
+import { Routes, RouterModule} from '@angular/router';
+import { PortafolioComponent } from './pages/portafolio/portafolio.component';
+import { AboutComponent } from './pages/about/about.component';
+import { PortafolioItemComponent } from './pages/portafolio-item/portafolio-item.component';
 
-const routes: Routes = [];
+// tslint:disable-next-line: variable-name
+const app_routes: Routes = [
+  { path: '', component: PortafolioComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'portafolio-item', component: PortafolioItemComponent },
+  { path: '**', pathMatch: 'full', redirectTo: '' },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(app_routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
