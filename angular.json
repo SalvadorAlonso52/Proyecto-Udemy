@@ -123,6 +123,6 @@
   },
   "defaultProject": "Portafolio",
   "cli": {
-    "analytics": "9ff500c8-e759-4199-a4a4-3eedb684815b"
+    "analytics": false
   }
 }
