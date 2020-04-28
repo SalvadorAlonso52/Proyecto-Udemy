@@ -7,14 +7,15 @@ import { PortafolioItemComponent } from './pages/portafolio-item/portafolio-item
 
 // tslint:disable-next-line: variable-name
 const app_routes: Routes = [
-  { path: '', component: PortafolioComponent },
+  { path: 'home', component: PortafolioComponent },
+  { path: '', component: PortafolioComponent},
   { path: 'about', component: AboutComponent },
   { path: 'portafolio-item', component: PortafolioItemComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '' },
+  { path: 'home', pathMatch: 'full', redirectTo: '' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(app_routes)],
+  imports: [RouterModule.forRoot(app_routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
