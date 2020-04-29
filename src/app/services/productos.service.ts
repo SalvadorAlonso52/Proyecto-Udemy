@@ -18,10 +18,14 @@ export class ProductosService {
     this.http.get('https://angular-html-fec8a.firebaseio.com/Productos_idx.json')
     .subscribe( (resp: Producto[]) => {
       this.productos = resp;
-      console.log (resp);
       setTimeout(() => {
         this.cargada = false;
       }, 500);
     });
+  }
+
+  getProducto(id: string)
+  {
+    return this.http.get(`https:angular-html-fec8a.firebaseio.com/Productos/${ id }.json`);
   }
 }
